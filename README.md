@@ -1,4 +1,4 @@
-# NeelCode
+# NeelBook
 This tool is to enable you to generate code based on configuration in json format
 
 # Commands
