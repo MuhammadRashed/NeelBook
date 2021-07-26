@@ -1,19 +1,32 @@
 # NeelBook
-This tool is to enable you to generate code based on configuration in json format
+NeelBook is a CLI tool to generate code based on configuration in json format, for all programing languages
 
 # Commands
-
+To view all available commands:
 ```
 neelbook
+```
+
+To create a new project
+```
 neelbook new [name]
+```
+To view all available plugins (plugins are templates)
+```
 neelbook plugin list
+```
+To add remove plugins :
+```
 neelbook plugin add [name]
 neelbook plugin remove [name]
+```
+To execute code generation using templates:
+```
 neelbook run
 ```
 
 
-# Updating templates
+# Creating/Updating templates
 
 ## Basic Syntax
 We have three kinds of contents:
@@ -108,6 +121,41 @@ Please not you can access sub array of other json elements like this:
 //## end
 ```
 #
+
+### String Functions
+
+let's define a string variable called x1 equals to "AppLibTest" and use string functions aginst it:
+
+Command | Result 
+--- | --- 
+```x1``` | AppLibTest 
+```camel(x1)``` | appLibTest 
+```pascal(x1)``` | AppLibTest 
+```snake(x1)``` | applibtest 
+```kebab(x1)``` | applibtest 
+```spacer(x1)``` | App Lib Test 
+```hyphen(x1)``` | app-lib-test 
+```lower(x1)``` | applibtest 
+```upper(x1)``` | APPLIBTEST 
+```replace(hyphen(x1) "-" "/")``` | app/lib/test 
+
+let's define another string variable called y1 equals to "Book Library" and use string functions aginst it:
+
+Command | Result 
+--- | --- 
+```y1``` | Book Library 
+```camel(y1)``` | bookLibrary 
+```pascal(y1)``` | BookLibrary 
+```snake(y1)``` | book_library 
+```kebab(y1)``` | book-library 
+```spacer(y1)``` | Book  Library
+```hyphen(y1)``` | book -library
+```lower(y1)``` | book library 
+```upper(y1)``` | BOOK LIBRARY
+```replace(hyphen(y1) "-" "/")``` | book /library
+
+
+
 ## Control Output files
 All output statements start with *output* keyword
 by default all output files will by located in output folder, the output filename by default will be the same source template file but without the extension ".t"
